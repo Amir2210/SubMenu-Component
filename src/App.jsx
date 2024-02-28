@@ -1,4 +1,8 @@
+import { Nav } from './cmps/Nav'
+
 const App = () => {
-  return <h2>SubMenu-Component</h2>
+  return <main>
+    <Nav />
+  </main>
 }
 export default App
