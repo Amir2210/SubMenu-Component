@@ -1,12 +1,12 @@
 import { useGlobalContext } from '../AppContext'
 import sublinks from '../data'
 export function Sidebar() {
-  const { isSidebarOpen } = useGlobalContext()
+  const { isSidebarOpen, onToggleSidebar } = useGlobalContext()
   return (
     isSidebarOpen ? (
       <aside className='sidebar show-sidebar'>
         <div className="sidebar-container">
-          <button className="close-btn">X</button>
+          <button onClick={onToggleSidebar} className="close-btn">X</button>
           <div className="sidebar-links">
             {sublinks.map(link => <article key={link.pageId}>
               <h4>{link.page}</h4>
