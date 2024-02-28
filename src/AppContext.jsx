@@ -27,7 +27,7 @@ export function AppContext({ children }) {
     setLinkHovered(null)
   }
   return (
-    <GlobalContext.Provider value={{ onOpenSidebar, onCloseSidebar, onLinkHover, onLinkRemoveHover, isLinkHover, linkHovered }}>
+    <GlobalContext.Provider value={{ isSidebarOpen, onOpenSidebar, onCloseSidebar, onLinkHover, onLinkRemoveHover, isLinkHover, linkHovered }}>
       {children}
     </GlobalContext.Provider>
   )
