@@ -8,15 +8,26 @@ export const useGlobalContext = () => {
 
 export function AppContext({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-
+  const [isLinkHover, setIsLinkHover] = useState(false)
+  const [linkHovered, setLinkHovered] = useState(null)
   function onOpenSidebar() {
     setIsSidebarOpen(true)
   }
   function onCloseSidebar() {
     setIsSidebarOpen(false)
   }
+
+  function onLinkHover(linkId) {
+    setIsLinkHover(true)
+    setLinkHovered(linkId)
+  }
+
+  function onLinkRemoveHover() {
+    setIsLinkHover(false)
+    setLinkHovered(null)
+  }
   return (
-    <GlobalContext.Provider value={{ onOpenSidebar, onCloseSidebar }}>
+    <GlobalContext.Provider value={{ onOpenSidebar, onCloseSidebar, onLinkHover, onLinkRemoveHover }}>
       {children}
     </GlobalContext.Provider>
   )

@@ -1,5 +1,7 @@
 export function SubMenu() {
   return (
-    <h1>submenu</h1>
+    <div className="submenu">
+      <h5>sdf</h5>
+    </div>
   )
 }
