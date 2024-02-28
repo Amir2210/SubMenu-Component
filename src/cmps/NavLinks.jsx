@@ -1,5 +1,8 @@
+import sublinks from '../data'
 export function NavLinks() {
   return (
-    <h1>nav links</h1>
+    <>
+      {sublinks.map(link => <button className='nav-link' key={link.pageId}>{link.page}</button>)}
+    </>
   )
 }
