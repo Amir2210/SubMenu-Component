@@ -10,8 +10,8 @@ export function AppContext({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isLinkHover, setIsLinkHover] = useState(false)
   const [linkHovered, setLinkHovered] = useState(null)
-  function onOpenSidebar() {
-    setIsSidebarOpen(true)
+  function onToggleSidebar() {
+    setIsSidebarOpen(!isSidebarOpen)
   }
   function onCloseSidebar() {
     setIsSidebarOpen(false)
@@ -27,7 +27,7 @@ export function AppContext({ children }) {
     setLinkHovered(null)
   }
   return (
-    <GlobalContext.Provider value={{ isSidebarOpen, onOpenSidebar, onCloseSidebar, onLinkHover, onLinkRemoveHover, isLinkHover, linkHovered }}>
+    <GlobalContext.Provider value={{ isSidebarOpen, onToggleSidebar, onCloseSidebar, onLinkHover, onLinkRemoveHover, isLinkHover, linkHovered }}>
       {children}
     </GlobalContext.Provider>
   )
